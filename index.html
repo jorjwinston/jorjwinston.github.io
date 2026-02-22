@@ -21,7 +21,7 @@
         <aside class="sidebar glass-panel">
             <h2>Hisob Holati</h2>
             <div class="stat-box">
-                <span>Boshlang'ich Balans:</span>
+                <span>Boshlang'ich:</span>
                 <span id="start-balance">$0</span>
             </div>
             <div class="stat-box">
@@ -29,15 +29,12 @@
                 <span id="current-balance" class="highlight">$0</span>
             </div>
             <div class="stat-box">
-                <span>Foyda / Zarar:</span>
+                <span>Umumiy Foyda:</span>
                 <span id="total-pnl">$0</span>
             </div>
-            
             <hr>
-
             <h2>Strategiyalar (Win Rate)</h2>
-            <div id="strategy-stats" class="strategy-list">
-                </div>
+            <div id="strategy-stats" class="strategy-list"></div>
         </aside>
 
         <main class="main-content">
@@ -58,7 +55,14 @@
             </div>
 
             <div class="glass-panel table-section">
-                <h2>Savdolar Tarixi</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h2>Savdolar Tarixi</h2>
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="setFilter('all')">Hammasi</button>
+                        <button class="filter-btn" onclick="setFilter('week')">Shu hafta</button>
+                        <button class="filter-btn" onclick="setFilter('month')">Shu oy</button>
+                    </div>
+                </div>
                 <table id="trades-table">
                     <thead>
                         <tr>
@@ -77,13 +81,37 @@
         </main>
 
         <aside class="tools-sidebar">
-            <div class="glass-panel iframe-container">
-                <h3>Gann Square of 9</h3>
-                <iframe src="https://www.stockmaniacs.net/freebies/free-tools/gann-square-of-9-calculator/" frameborder="0"></iframe>
+            <div class="glass-panel">
+                <h2>Maqsad va Limitlar</h2>
+                <div class="stat-box">
+                    <span>Target (10%):</span>
+                    <span id="target-goal" style="color: #64ffda;">$0</span>
+                </div>
+                <div class="stat-box">
+                    <span>Max Zarar (6%):</span>
+                    <span id="max-loss" style="color: #ff6b6b;">$0</span>
+                </div>
+                <hr>
+                <div class="stat-box">
+                    <span>Kunlik Limit (3%):</span>
+                    <span id="daily-limit" style="color: #ffaa00;">$0</span>
+                </div>
+                <div class="stat-box">
+                    <span>Bugungi Natija:</span>
+                    <span id="today-pnl">$0</span>
+                </div>
             </div>
-            <div class="glass-panel iframe-container">
-                <h3>Forex Factory (Yangiliklar)</h3>
-                <iframe src="https://www.forexfactory.com/" frameborder="0"></iframe>
+
+            <div class="glass-panel iframe-container" style="display: block; text-align: center;">
+                <h3 style="margin-bottom: 5px;">Gann Square of 9</h3>
+                <p style="font-size: 0.8rem; color: #8892b0; margin-bottom: 15px;">Xavfsizlik protokoli sababli alohida ochiladi</p>
+                <a href="https://www.stockmaniacs.net/freebies/free-tools/gann-square-of-9-calculator/" target="_blank" class="glass-btn" style="display: block; text-decoration: none;">Kalkulyatorni ochish ↗</a>
+            </div>
+            
+            <div class="glass-panel iframe-container" style="display: block; text-align: center;">
+                <h3 style="margin-bottom: 5px;">Forex Factory</h3>
+                <p style="font-size: 0.8rem; color: #8892b0; margin-bottom: 15px;">Iqtisodiy yangiliklar taqvimi</p>
+                <a href="https://www.forexfactory.com/" target="_blank" class="glass-btn" style="display: block; text-decoration: none;">Taqvimni ochish ↗</a>
             </div>
         </aside>
     </div>
