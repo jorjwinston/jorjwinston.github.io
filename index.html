@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Journal | Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div id="setup-modal" class="glass-modal hidden">
+        <div class="modal-content">
+            <h2>Xush kelibsiz!</h2>
+            <p>Iltimos, boshlang'ich hisob balansingizni kiriting (masalan, 6000):</p>
+            <input type="number" id="initial-balance-input" placeholder="$ Balans">
+            <button onclick="setInitialBalance()" class="glass-btn">Saqlash va Boshlash</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar glass-panel">
+            <h2>Hisob Holati</h2>
+            <div class="stat-box">
+                <span>Boshlang'ich Balans:</span>
+                <span id="start-balance">$0</span>
+            </div>
+            <div class="stat-box">
+                <span>Joriy Balans:</span>
+                <span id="current-balance" class="highlight">$0</span>
+            </div>
+            <div class="stat-box">
+                <span>Foyda / Zarar:</span>
+                <span id="total-pnl">$0</span>
+            </div>
+            
+            <hr>
+
+            <h2>Strategiyalar (Win Rate)</h2>
+            <div id="strategy-stats" class="strategy-list">
+                </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="glass-panel form-section">
+                <h2>Yangi Savdo Qo'shish</h2>
+                <form id="trade-form">
+                    <div class="form-grid">
+                        <input type="text" id="pair" placeholder="Juftlik (M: EUR/USD)" required>
+                        <input type="text" id="strategy" placeholder="Strategiya nomi" required>
+                        <select id="direction">
+                            <option value="Long">Long (Buy)</option>
+                            <option value="Short">Short (Sell)</option>
+                        </select>
+                        <input type="number" id="pnl" placeholder="Natija ($) (+ foyda, - zarar)" required>
+                    </div>
+                    <button type="submit" class="glass-btn primary-btn">Savdoni Saqlash</button>
+                </form>
+            </div>
+
+            <div class="glass-panel table-section">
+                <h2>Savdolar Tarixi</h2>
+                <table id="trades-table">
+                    <thead>
+                        <tr>
+                            <th>Sana</th>
+                            <th>Juftlik</th>
+                            <th>Yo'nalish</th>
+                            <th>Strategiya</th>
+                            <th>Natija ($)</th>
+                            <th>Harakat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trades-body">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+
+        <aside class="tools-sidebar">
+            <div class="glass-panel iframe-container">
+                <h3>Gann Square of 9</h3>
+                <iframe src="https://www.stockmaniacs.net/freebies/free-tools/gann-square-of-9-calculator/" frameborder="0"></iframe>
+            </div>
+            <div class="glass-panel iframe-container">
+                <h3>Forex Factory (Yangiliklar)</h3>
+                <iframe src="https://www.forexfactory.com/" frameborder="0"></iframe>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
